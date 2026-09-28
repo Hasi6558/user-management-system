@@ -1,4 +1,4 @@
-# User Management System
+# User Management System 
 
 A distributed user management system built in Go, following microservice and
 event-driven architecture principles. Built as a training assignment covering
