@@ -14,7 +14,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Setup Go
         uses: actions/setup-go@v5
@@ -28,7 +28,7 @@ jobs:
           version: v2.14
           working-directory: gateway-service
       
-      - test: Test gateway-service
+      - name: Test gateway-service
         working-directory: gateway-service
         run: go test ./...
 
@@ -38,6 +38,6 @@ jobs:
           version: v2.14
           working-directory: user-service
       
-      - test: Test user-service
+      - name: Test user-service
         working-directory: user-service
         run: go test ./...
