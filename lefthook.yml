@@ -1,0 +1,17 @@
+commit-msg:
+  jobs:
+    - name: conventional commits
+      run: conform enforce --commit-msg-file {1}
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: golangci-lint (gateway-service)
+      root: "gateway-service/"
+      glob: "gateway-service/**/*.go"
+      run: golangci-lint run ./...
+
+    - name: golangci-lint (user-service)
+      root: "user-service/"
+      glob: "user-service/**/*.go"
+      run: golangci-lint run ./...
